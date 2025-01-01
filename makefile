@@ -1,6 +1,6 @@
-all: generate
+all: sso
 
-generate:
+sso:
 	@echo "Generating gRPC and grpc-gateway"
 	protoc -I ./proto \
       --go_out ./gen/ --go_opt paths=source_relative \

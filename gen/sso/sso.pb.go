@@ -7,7 +7,7 @@
 package ssov1
 
 import (
-	_ "google.golang.org/genproto/googleapis/proto/annotations"
+	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

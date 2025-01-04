@@ -9,19 +9,19 @@ option go_package = "k1vch.sso.v1;ssov1";
 service Auth{
   rpc Register (RegisterRequest) returns (RegisterResponse){
     option (google.api.http) = {
-      post: "/v1/register"
+      post: "/api/v1/register"
       body: "*"
     };
   };
   rpc Login (LoginRequest) returns (LoginResponse){
     option (google.api.http) = {
-      post: "/v1/login"
+      post: "/api/v1/login"
       body: "*"
     };
   };
   rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse){
     option (google.api.http) = {
-      get: "/v1/is_admin/{user_id}"
+      get: "/api/v1/is_admin/{user_id}"
     };
   };
 }

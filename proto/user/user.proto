@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+import "shoe.proto";
+
+package user;
+
+option go_package = "k1vch.user.v1;userv1";
+
+service UserService{
+  rpc GetUser(GetUserRequest) returns (GetUserResponse){
+    option (google.api.http) = {
+      get: "/api/v1/users/{user_id}"
+    };
+  };
+  rpc AddUser(AddUserRequest) returns (AddUserResponse){
+    option (google.api.http) = {
+      post: "/api/v1/users"
+      body: "*"
+    };
+  };
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse){
+    option (google.api.http) = {
+      delete: "/api/v1/users/{user_id}"
+    };
+  };
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse){
+    option (google.api.http) = {
+      patch: "/api/v1/users/{user_id}"
+      body: "*"
+    };
+  };
+}
+
+message User{
+  int64 id = 1;
+  string name = 2;
+  string surname = 3;
+  string username = 4;
+  ShoeCollection shoes = 5;
+}
+
+message GetUserRequest{
+  int64 user_id = 1;
+}
+
+message GetUserResponse{
+  User user = 1;
+}
+
+message AddUserRequest{
+  string name = 1;
+  string surname = 2;
+  string username = 3;
+}
+
+message AddUserResponse{
+  int64 user_id = 1;
+}
+
+message DeleteUserRequest{
+  int64 user_id = 1;
+}
+
+message DeleteUserResponse{
+  bool isSuccessfully = 1;
+}
+
+message UpdateUserRequest{
+  int64 user_id = 1;
+  string name = 2;
+  string surname = 3;
+  string username = 4;
+}
+
+message UpdateUserResponse{
+  User user = 1;
+}

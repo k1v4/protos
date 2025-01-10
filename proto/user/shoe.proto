@@ -24,3 +24,36 @@ message ShoeCollection {
   string user_id = 1;
   repeated Shoe shoes = 2;
 }
+
+message AddShoeRequest{
+  string name = 1;
+  string image_url = 2;
+}
+
+message AddShoeResponse{
+  int64 shoe_id = 1;
+}
+
+message GetShoeRequest{
+  int64 shoe_id = 1;
+}
+
+message GetShoeResponse{
+  Shoe shoe = 1;
+}
+
+message DeleteShoeRequest{
+  int64 shoe_id = 1;
+}
+
+message DeleteShoeResponse{
+  bool isSuccessfully = 1;
+}
+
+message UpdateShoeRequest{
+  Shoe shoe = 1;
+}
+
+message UpdateShoeResponse{
+  Shoe shoe = 1;
+}

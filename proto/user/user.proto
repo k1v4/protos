@@ -39,7 +39,7 @@ service UserService{
   };
   rpc AddUser(AddUserRequest) returns (AddUserResponse){
     option (google.api.http) = {
-      post: "/api/v1/users"
+      post: "/api/v1/users/{user_id}"
       body: "*"
     };
   };
@@ -117,6 +117,7 @@ message AddUserRequest{
   string name = 1;
   string surname = 2;
   string username = 3;
+  int64 user_id = 4;
 }
 
 message AddUserResponse{

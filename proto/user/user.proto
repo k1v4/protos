@@ -12,23 +12,23 @@ service ShoeService{
       post: "/api/v1/shoes"
       body: "*"
     };
-  };;
+  };
   rpc GetShoe(GetShoeRequest) returns (GetShoeResponse){
     option (google.api.http) = {
       get: "/api/v1/shoes/{shoe_id}"
     };
-  };;
+  };
   rpc DeleteShoe(DeleteShoeRequest) returns (DeleteShoeResponse){
     option (google.api.http) = {
       delete: "/api/v1/shoes/{shoe_id}"
     };
-  };;
+  };
   rpc UpdateShoe(UpdateShoeRequest) returns (UpdateShoeResponse){
     option (google.api.http) = {
       patch: "/api/v1/shoes/{shoe_id}"
       body: "*"
     };
-  };;
+  };
 }
 
 service UserService{

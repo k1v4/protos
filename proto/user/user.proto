@@ -60,11 +60,13 @@ message Shoe {
   int64 shoe_id = 1;
   string name = 2;
   string image_url = 3;
+  int64 user_id = 4;
 }
 
 message AddShoeRequest{
   string name = 1;
   string image_url = 2;
+  int64 user_id = 3;
 }
 
 message AddShoeResponse{

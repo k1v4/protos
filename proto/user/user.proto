@@ -105,7 +105,9 @@ message UpdateShoeResponse{
   Shoe shoe = 1;
 }
 
-message GetAllShoesRequest{}
+message GetAllShoesRequest{
+  int64 user_id = 1;
+}
 
 message GetAllShoesResponse{
   repeated Shoe shoes = 1;

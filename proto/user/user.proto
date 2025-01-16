@@ -98,6 +98,7 @@ message UpdateShoeRequest{
   int64 shoe_id = 1;
   string name = 2;
   string image_url = 3;
+  int64 user_id = 4;
 }
 
 message UpdateShoeResponse{

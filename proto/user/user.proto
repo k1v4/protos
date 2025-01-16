@@ -29,6 +29,11 @@ service ShoeService{
       body: "*"
     };
   };
+  rpc GetShoes(GetAllShoesRequest) returns (GetAllShoesResponse){
+    option (google.api.http) = {
+      get: "/api/v1/users"
+    };
+  }
 }
 
 service UserService{
@@ -54,11 +59,6 @@ service UserService{
       body: "*"
     };
   };
-  rpc GetShoes(GetAllShoesRequest) returns (GetAllShoesResponse){
-    option (google.api.http) = {
-      get: "/api/v1/users"
-    };
-  }
 }
 
 message Shoe {

@@ -24,21 +24,39 @@ service Auth{
       get: "/api/v1/is_admin/{user_id}"
     };
   };
+  rpc GetUser(GetUserRequestById) returns (GetUserResponseById){
+    option (google.api.http) = {
+      get: "/api/v1/users/{user_id}"
+    };
+  };
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse){
+    option (google.api.http) = {
+      delete: "/api/v1/users/{user_id}"
+    };
+  };
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse){
+    option (google.api.http) = {
+      patch: "/api/v1/users/{user_id}"
+      body: "*"
+    };
+  };
 }
 
 message RegisterRequest{
-  string email = 1;
-  string password = 2;
+  string email = 3;
+  string username = 4;
+  string password = 5;
 }
 
 message RegisterResponse{
-  int64 user_id = 1;
+//  int64 user_id = 1;
+  string token = 2;
 }
 
 message LoginRequest{
   string email = 1;
   string password = 2;
-  int32 app_id = 3;
+//  int32 app_id = 3;
 }
 
 message LoginResponse{
@@ -51,4 +69,40 @@ message IsAdminRequest{
 
 message IsAdminResponse{
   bool is_admin = 1;
+}
+
+message User{
+  int64 id = 1;
+  string email = 5;
+  string name = 6;
+  string surname = 7;
+  string username = 8;
+}
+
+message GetUserRequestById{
+  int64 user_id = 1;
+}
+
+message GetUserResponseById{
+  User user = 1;
+}
+
+message DeleteUserRequest{
+  int64 user_id = 1;
+}
+
+message DeleteUserResponse{
+  bool isSuccessfully = 1;
+}
+
+message UpdateUserRequest{
+  int64 user_id = 1;
+  string name = 2;
+  string surname = 3;
+  string username = 4;
+  string email = 5;
+}
+
+message UpdateUserResponse{
+  User user = 1;
 }

@@ -354,7 +354,7 @@ func RegisterShoeServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/shoe.ShoeService/GetShoes", runtime.WithHTTPPathPattern("/api/v1/users"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/shoe.ShoeService/GetShoes", runtime.WithHTTPPathPattern("/api/v1/shoes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -506,7 +506,7 @@ func RegisterShoeServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/shoe.ShoeService/GetShoes", runtime.WithHTTPPathPattern("/api/v1/users"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/shoe.ShoeService/GetShoes", runtime.WithHTTPPathPattern("/api/v1/shoes"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -534,7 +534,7 @@ var (
 
 	pattern_ShoeService_UpdateShoe_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"api", "v1", "shoes", "shoe_id"}, ""))
 
-	pattern_ShoeService_GetShoes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "users"}, ""))
+	pattern_ShoeService_GetShoes_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"api", "v1", "shoes"}, ""))
 )
 
 var (

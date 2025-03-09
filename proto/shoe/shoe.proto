@@ -25,7 +25,7 @@ service ShoeService{
   };
   rpc UpdateShoe(UpdateShoeRequest) returns (UpdateShoeResponse){
     option (google.api.http) = {
-      patch: "/api/v1/shoes/{shoe_id}"
+      put: "/api/v1/shoes/{shoe_id}"
       body: "*"
     };
   };

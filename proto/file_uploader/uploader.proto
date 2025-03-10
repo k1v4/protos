@@ -10,7 +10,7 @@ service FileUploader{
 }
 
 message ImageUploadRequest {
-  string image_data = 1;  // base64-строка
+  bytes image_data = 3;  // base64-строка
   string file_name = 2;   // имя файла
 }
 

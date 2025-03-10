@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package uploader;
+
+option go_package = "k1vch.uploader.v1;uploaderv1";
+
+service FileUploader{
+  rpc UploadFile(ImageUploadRequest) returns (ImageUploadResponse);
+  rpc DeleteFile(ImageDeleteRequest) returns (ImageDeleteResponse);
+}
+
+message ImageUploadRequest {
+  string image_data = 1;  // base64-строка
+  string file_name = 2;   // имя файла
+}
+
+message ImageUploadResponse{
+  string url = 1; // url загруженной картинки
+}
+
+message ImageDeleteRequest{
+  string url = 1; // url картинки, которую надо удалить
+}
+
+message ImageDeleteResponse{
+  bool isDeleted = 1; // итог удаления
+}

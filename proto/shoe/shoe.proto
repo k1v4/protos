@@ -47,6 +47,7 @@ message AddShoeRequest{
   string name = 1;
   bytes image_data = 4;
   //int64 user_id = 3;
+  string image_name = 5;
 }
 
 message AddShoeResponse{
@@ -73,6 +74,7 @@ message UpdateShoeRequest{
   int64 shoe_id = 1;
   string name = 2;
   bytes image_data = 5;
+  string new_file_name = 6;
   //int64 user_id = 4;
 }
 

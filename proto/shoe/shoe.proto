@@ -45,7 +45,7 @@ message Shoe {
 
 message AddShoeRequest{
   string name = 1;
-  string image_url = 2;
+  bytes image_data = 4;
   //int64 user_id = 3;
 }
 
@@ -72,7 +72,7 @@ message DeleteShoeResponse{
 message UpdateShoeRequest{
   int64 shoe_id = 1;
   string name = 2;
-  string image_url = 3;
+  bytes image_data = 5;
   //int64 user_id = 4;
 }
 
